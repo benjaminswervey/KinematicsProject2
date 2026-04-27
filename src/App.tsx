@@ -26,7 +26,10 @@ const getInterpolatedValue = (data: any[], ay: number, ax: number) => {
   let minDistance = Infinity;
   
   for (const row of data) {
-    const d = Math.sqrt(Math.pow(row.ay - ay, 2) + Math.pow(row.ax - ax, 2));
+    const d = Math.sqrt(
+      Math.pow(row.ay - ay, 2) + 
+      Math.pow(row.ax - ax, 2)
+    );
     if (d < minDistance) {
       minDistance = d;
       best = row;
@@ -239,7 +242,7 @@ export default function App() {
               { label: 'Ay', key: 'ay', color: 'bg-zinc-900', values: availableAy },
               { label: 'Ax', key: 'ax', color: 'bg-cyan-500', values: availableAx }
             ].map((s) => {
-              const currentValue = params[s.key as 'ay' | 'ax'];
+              const currentValue = (params as any)[s.key];
               const currentIndex = s.values.indexOf(currentValue);
               
               return (
@@ -250,7 +253,7 @@ export default function App() {
                   <div className="col-span-7 h-5 bg-zinc-200 rounded-full relative overflow-hidden ring-1 ring-zinc-300">
                     <div 
                       className={cn("absolute inset-y-0 left-0 transition-all", s.color)}
-                      style={{ width: `${(currentIndex / (s.values.length - 1)) * 100}%` }}
+                      style={{ width: `${s.values.length > 1 ? (currentIndex / (s.values.length - 1)) * 100 : 0}%` }}
                     />
                     <input 
                       type="range" 

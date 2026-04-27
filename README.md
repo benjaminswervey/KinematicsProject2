@@ -1,20 +1,11 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Kinematics Project 2
 
-# Run and deploy your AI Studio app
+Flexure simulation and kinematics analysis project.
 
-This contains everything you need to run your app locally.
+## Deployment Instructions
 
-View your app in AI Studio: https://ai.studio/apps/3ee43bc3-00d3-4aee-a152-51d0fa34c1c7
+1. Go to **Settings** > **Pages**.
+2. Change **Source** to **GitHub Actions**.
+3. Go to the **Actions** tab and trigger the workflow.
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+The app will be available at your GitHub Pages URL under `/KinematicsProject2/`.
